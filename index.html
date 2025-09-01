@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoHobby - Sua paixão por carros</title>
+    <style>
+        /* Estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(to right, #d50000, #ff1744);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navegação */
+        nav {
+            background-color: #333;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        
+        /* Conteúdo principal */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Artigos */
+        .post {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .post-content {
+            padding: 1.5rem;
+        }
+        
+        .post h2 {
+            color: #d50000;
+            margin-bottom: 0.5rem;
+        }
+        
+        .post-meta {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            background: #d50000;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+        
+        /* Barra lateral */
+        .sidebar {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar h3 {
+            color: #d50000;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar ul li {
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .sidebar ul li a:hover {
+            color: #d50000;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            color: #d50000;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .newsletter-form input {
+            padding: 0.7rem;
+            width: 300px;
+            max-width: 100%;
+            margin-right: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .newsletter-form button {
+            background: #d50000;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: #b71c1c;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">AutoHobby</div>
+            <div class="tagline">Sua paixão por carros em primeiro lugar</div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Lançamentos</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Comparativos</a></li>
+                <li><a href="#">Clássicos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="content">
+                <article class="post">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e82138d43aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Novo carro lançamento">
+                    <div class="post-content">
+                        <h2>Novo SUV Elétrico Chega ao Mercado Brasileiro</h2>
+                        <p class="post-meta">Publicado em 12 de Maio de 2023 | Categoria: Lançamentos</p>
+                        <p>O novo modelo elétrico promete autonomia de 500km e tecnologia de ponta. Confira os detalhes deste lançamento que está agitando o mercado automotivo. Com design arrojado e interior high-tech, este veículo representa o futuro da mobilidade.</p>
+                        <a href="#" class="read-more">Leia mais</a>
+                    </div>
+                </article>
+                
+                <article class="post">
+                    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Comparativo de carros">
+                    <div class="post-content">
+                        <h2>Comparativo: Sedans Médios 2023</h2>
+                        <p class="post-meta">Publicado em 10 de Maio de 2023 | Categoria: Comparativos</p>
+                        <p>Analisamos os principais sedans médios disponíveis no mercado brasileiro. Confira qual modelo oferece o melhor custo-benefício, desempenho e conforto para você e sua família.</p>
+                        <a href="#" class="read-more">Leia mais</a>
+                    </div>
+                </article>
+                
+                <article class="post">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Carro esportivo">
+                    <div class="post-content">
+                        <h2>Review: Novo Esportivo da Marca</h2>
+                        <p class="post-meta">Publicado em 8 de Maio de 2023 | Categoria: Reviews</p>
+                        <p>Testamos o mais novo esportivo que chegou ao mercado. Performance, dirigibilidade e design são analisados em detalhes neste review completo para os amantes de carros esportivos.</p>
+                        <a href="#" class="read-more">Leia mais</a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="sidebar">
+                <div class="about">
+                    <h3>Sobre o Blog</h3>
+                    <p>AutoHobby é um blog dedicado aos apaixonados por carros. Trazemos as últimas novidades, lançamentos, reviews e comparativos do mundo automotivo.</p>
+                </div>
+                
+                <div class="categories">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="#">Lançamentos (15)</a></li>
+                        <li><a href="#">Reviews (23)</a></li>
+                        <li><a href="#">Comparativos (12)</a></li>
+                        <li><a href="#">Elétricos (8)</a></li>
+                        <li><a href="#">Clássicos (19)</a></li>
+                        <li><a href="#">Dicas e Manutenção (17)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="popular-posts">
+                    <h3>Posts Populares</h3>
+                    <ul>
+                        <li><a href="#">Os 10 carros mais esperados de 2023</a></li>
+                        <li><a href="#">Como economizar combustível com simples ajustes</a></li>
+                        <li><a href="#">Review: Novo Hatch Premium surpreende</a></li>
+                        <li><a href="#">Elétricos vs. Combustão: Qual vale a pena?</a></li>
+                        <li><a href="#">Os clássicos que valorizaram nos últimos 5 anos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="newsletter">
+            <h2>Assine nossa Newsletter</h2>
+            <p>Receba as últimas novidades do mundo automotivo diretamente no seu e-mail</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit">Assinar</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>AutoHobby &copy; 2023 - Todos os direitos reservados</p>
+            <p>Desenvolvido como hobby por um entusiasta de carros</p>
+            <div class="social-links">
+                <a href="#">📱</a>
+                <a href="#">📸</a>
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simulação de funcionalidade de newsletter
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert(`Obrigado por assinar nossa newsletter com o email: ${email}`);
+            this.querySelector('input').value = '';
+        });
+    </script>
+</body>
+</html>
